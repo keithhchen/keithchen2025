@@ -11,12 +11,13 @@ export default defineConfig({
     fs: {
       strict: false,
     },
-    proxy: {
-      '/WW_verify_5W7Mk9sXte5PYm8I.txt': {
-        target: 'file://',
-        changeOrigin: true,
-        rewrite: () => '/WW_verify_5W7Mk9sXte5PYm8I.txt'
-      }
-    }
+  },
+  publicDir: 'public',
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+      },
+    },
   }
 });
